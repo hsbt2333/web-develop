@@ -1,0 +1,91 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;;
+    height: 60px;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+.container{
+    display: flex;
+}
+aside{
+    width: 20%;
+    height: 769px;
+}
+main{
+    width: 80%;
+    height: 769px;
+}
+.menu{
+    text-align: center;
+    margin: 10px;
+}
+.menu > *{
+    margin: 10px;
+}
+.my-button{
+    display: inline-block;
+    cursor: pointer;
+    color: #606266;
+    background: #fff;
+    border: 1px solid #606266;
+    line-height: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 4px;
+    transition: .1s;
+}
+.my-button:hover{
+    color: #1677ff;
+}
+.my-button-text{
+    border-color: #fff;
+}
+.my-color-list{
+    color: #5470c6;
+    color: #91cc75;
+    color: #fac858;
+    color: #ee6666;
+    color: #9a60b4;
+    color: #ea7ccc;
+    color: #dcdfe6;
+    color: #e58308;
+    color: #73c0de;
+    color: #3ba272;
+    color: #f56c6c;
+
+    color: #67C23A;
+    color: #E6A23C;
+    color: #F56C6C;
+    color: #909399;
+
+    --ant-color-primary: #1677ff;
+    --ant-color-success: #52c41a;
+    --ant-color-warning: #faad14;
+    --ant-color-error: #ff4d4f;
+    --ant-color-info: #1677ff;
+
+    --ant-blue: #1677ff;
+    --ant-green: #52C41A;
+    --ant-orange: #FA8C16;
+    --ant-red: #F5222D;
+    --ant-purple: #722ED1;
+    --ant-cyan: #13C2C2;
+    --ant-magenta: #EB2F96;
+    --ant-pink: #eb2f96;
+    --ant-yellow: #FADB14;
+    --ant-volcano: #FA541C;
+    --ant-geekblue: #2F54EB;
+    --ant-gold: #FAAD14;
+    --ant-lime: #A0D911;
+    --ant-color-link: #1677ff;
+    --ant-color-text-base: #000;
+    --ant-color-bg-base: #fff;
+}

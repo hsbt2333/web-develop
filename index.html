@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="author" content="菡云芝" />
-        <title>HTML+CSSS+JS 示例</title>
-        <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="assets/index.css">
-        <script src="assets/index.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <nav style="width: 80%;">
-                <div class="my-button my-button-text" onclick="loadHTMLCatalog()">HTML</div>
-                <div class="my-button my-button-text" onclick="loadCSSCatalog()">CSS</div>
-                <div class="my-button my-button-text" onclick="loadJSCatalog()">JavaScript</div>
-            </nav>
-        </header>
-        <div class="container">
-            <aside>
-                <div class="menu">
-                    
-                </div>
-            </aside>
-            <main>
-
-            </main>
-        </div>
-        <footer>&copy;菡云芝</footer>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="菡云芝" />
+    <title>HTML+CSSS+JS 示例</title>
+    <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="header"></nav>
+    </header>
+    <div class="container">
+      <aside>
+        <ul id="aside" class="my-menu"></ul>
+      </aside>
+      <main>
+        <iframe id="main"></iframe>
+      </main>
+    </div>
+    <footer>&copy;菡云芝</footer>
+  </body>
+  <script src="./index.js"></script>
 </html>

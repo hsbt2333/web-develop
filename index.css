@@ -33,6 +33,7 @@ iframe{
     display: flex;
 }
 .my-menu{
+    height: 100%;
     text-align: center;
     border-right: solid 1px #e6e6e6;
     list-style: none;
@@ -55,7 +56,7 @@ iframe{
     background-color: #e6f4ff;
 }
 .my-menu-item-text{
-    font-size: 15px;
+    font-size: 14px;
 }
 .my-button{
     display: inline-block;

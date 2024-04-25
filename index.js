@@ -23,31 +23,19 @@
         src: "./html/01-basic.html",
       },
       {
-        label: "图片",
-        src: "./html/02-img.html",
+        label: "属性",
+        src: "./html/02-attribute.html",
       },
       {
-        label: "链接",
-        src: "",
+        label: "事件",
+        src: "./html/03-event.html",
       },
       {
-        label: "列表",
-        src: "",
-      },
-      {
-        label: "多媒体",
-        src: "",
-      },
-      {
-        label: "绘图",
-        src: "",
-      },
-      {
-        label: "时间",
-        src: "",
+        label: "表单",
+        src: "./html/04-form.html",
       },
     ];
-    
+
     aside.innerHTML = "";
     menu.forEach((e) => {
       let li = document.createElement("li");

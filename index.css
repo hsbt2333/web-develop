@@ -1,4 +1,5 @@
 /* 全局标签样式 */
+
 header{
     display: flex;
     align-items: center;
@@ -53,6 +54,7 @@ iframe{
     background-color: #e6f4ff;
 }
 .my-menu-item.is-active {
+    color: #1677ff;
     background-color: #e6f4ff;
 }
 .my-menu-item-text{

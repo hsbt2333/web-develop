@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="菡云芝" />
+    <title>属性</title>
+    <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <h1>id</h1>
+    <p>定义了一个全文档唯一的标识符（ID）。它用于在链接（使用片段）、脚本和样式（通过 CSS）中辨识元素。</p>
+    <p>id 的值不得包含空格和制表符等空白字符。浏览器会将不符合规范的 ID 中的空白字符视为 ID 的一部分。与允许以空格分隔值的 class 属性不同，元素只能拥有一个 ID 值。</p>
+
+    <h1>class</h1>
+    <p>class 的值是一个以空格分隔的元素的类名（classes）列表，它允许 CSS 和 Javascript 通过类选择器 (class selectors) 或 DOM 方法 (
+        document.getElementsByClassName) 来选择和访问特定的元素。</p>
+    <p>尽管对 class 的命名没有要求，但 web 开发者最好使用可以表达元素语义目的的名称，而不是描述元素展现的名称（即使一个元素是斜体，但是 class 的命名也不应该是
+        italics）。语义化命名即使在页面展现发生改变时仍能合乎逻辑。</p>
+
+    <h1>title</h1>
+    <p> 包含代表与它所属的元素有关的咨询信息的文本。</p>
+    <p>title 属性可以包含多行。每个 U+000A LINE FEED（LF）符号代表一个换行。有一些需要注意的东西，因为这意味着下面的渲染要跨越两行</p>
+    <p>如果一个元素没有 title 属性，那么它就从它的父节点继承，而父节点又可以从它的父节点继承，以此类推。</p>
+    <p>如果这个属性被设置为空字符串，这意味着它的祖先的 title 是不相关的，不应该被用于这个元素的工具提示（tooltip）中。</p>
+
+    <h1>style</h1>
+    <p>包含应用到元素的 CSS 样式声明。要注意样式最好定义在单独的文件中。这个属性以及 &lt;style&gt; 元素的主要目的是快速装饰。</p>
+
+    <h1>lang</h1>
+    <p>参与了元素语言的定义。这个语言是不可编辑元素写入的语言，或者可编辑元素应该写入的语言。标签包含单个条目，值的格式由 用于定义语言的标签 (BCP47) IETF
+        文档定义。如果标签的内容是空字符串，语言就设为未知。如果标签内容是无效的，根据 BCP47，它就设为无效。</p>
+
+    <h1>slot</h1>
+    <p>将一个 shadow DOM shadow 树中的槽分配给一个元素：带有 slot 属性的元素分配给由 &lt;slot&gt; 创建的槽，它的 name 属性的值匹配 slot 属性的值。</p>
+
+    <h1>tabindex</h1>
+    <p>属性规定元素的 tab 键控制次序（当 tab 键用于导航时）。</p>
+    <p>指示其元素是否可以聚焦，以及它是否/在何处参与顺序键盘导航（通常使用Tab键，因此得名）。</p>
+
+    <h1>hidden</h1>
+    <p>hidden是一个布尔属性，表示一个元素尚未或者不再相关。如果一个元素设置了这个属性，它就不会被显示。</p>
+    <p>hidden属性不能用于隐藏那些可以在其他板块中合理显示的内容</p>
+
+    <h1>accesskey 快捷键</h1>
+    <p>提供了为当前元素生成快捷键的方式。属性值必须包含一个可打印字符。激活 accesskey 的操作取决于浏览器及其平台。</p>
+    <button accesskey="p" onclick="accesskeyButtonTest()">alt + p</button> 先点击到这个 iframe 框体内才能用快捷键
+
+    <h1>autocapitalize 自动大小写</h1>
+    <p>是一个枚举属性，它控制用户输入/编辑文本输入时文本输入是否自动大写，以及如何自动大写</p>
+    <p>在物理键盘上输入时，autocapitalize 属性无效。相反，它会影响其他输入机制的行为，比如移动设备的虚拟键盘和语音输入。</p>
+    <p>autocapitalize 属性永远不会为带有 type 属性，其值为 url、email 或 password 的 input 元素启用自动大写。</p>
+    <p>off or none: 没有应用自动大写（所有字母都默认为小写字母）。</p>
+    <p>on or sentences: 每个句子的第一个字母默认为大写字母；所有其他字母都默认为小写字母。</p>
+    <p>words: 每个单词的第一个字母默认为大写字母；所有其他字母都默认为小写字母。</p>
+    <p>characters: 所有的字母都默认为大写。</p>
+
+    <h1>autofocus</h1>
+    <p>autofocus 是一个布尔属性，表示元素应在页面加载时或其所属的 dialog 显示时被聚焦</p>
+    <p>在文档或对话框中，最多只能有一个元素具有 autofocus 属性。如果应用于多个元素，第一个元素将获得焦点。</p>
+
+    <h1>contenteditable</h1>
+    <p>contenteditable 是一个枚举属性，表示元素是否可被用户编辑。如果可以，浏览器会修改元素的组件以允许编辑。</p>
+    <p>true 或空字符串，表示元素是可编辑的。false 表示元素不是可编辑的。plaintext-only 表示元素的原始文本是可编辑的，但富文本格式会被禁用。</p>
+    <p>虽然该属性允许设定的值包括 true 和 false，但该属性仍是一个枚举属性而非布尔属性。</p>
+
+    <h1>data-*</h1>
+    <p>是一类被称为自定义数据属性的属性，它赋予我们在所有 HTML 元素上嵌入自定义数据属性的能力，并可以通过脚本在 HTML 与 DOM 表现之间进行专有数据的交换。</p>
+    <p>通过添加 data-* 属性，即使是普通的 HTML 元素也能变成相当复杂且强大的编程对象</p>
+
+    <h1>dir</h1>
+    <p>是一个指示元素中文本方向的枚举属性</p>
+    <p>ltr，指从左到右，用于那种从左向右书写的语言（比如英语）；</p>
+    <p>rtl，指从右到左，用于那种从右向左书写的语言（比如阿拉伯语）；</p>
+    <p>auto，指由用户代理决定方向。它在解析元素中字符时会运用一个基本算法，直到发现一个具有强方向性的字符，然后将这一方向应用于整个元素。</p>
+    <input type="text" dir="rtl" />
+
+    <h1>draggable</h1>
+    <p>draggable 是一种枚举属性，用于标识元素是否允许使用浏览器原生行为或 HTML 拖放操作 API 拖动。</p>
+    <p>true：表示元素可以被拖动</p>
+    <p>false：表示元素不可以被拖动</p>
+    <p>如果该属性没有设值，则默认值 为 auto，表示使用浏览器定义的默认行为。</p>
+    <p>这个属性是枚举类型，而不是布尔类型。这意味着必须显式指定值为 true 或者 false，可以应用于严格属于 HTML 命名空间 (en-US)的元素 不能应用于SVG</p>
+    <div draggable="true" style="border: 1px solid #91cc75;height: 100px;width: 100px;margin: 10px;">可拖放</div>
+    <div draggable="false" style="border: 1px solid #91cc75;height: 100px;width: 100px;margin: 10px;">不可拖放</div>
+    <p>可拖放就不能复制文字了</p>
+
+    <h1>inputmode</h1>
+    <p>是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。它可以是以下值：</p>
+    <p>none 无虚拟键盘。在应用程序或者站点需要实现自己的键盘输入控件时很有用。</p>
+    <p>text 使用用户本地区域设置的标准文本输入键盘。</p>
+    <p>decimal 小数输入键盘，包含数字和分隔符（通常是“ . ”或者“ , ”），设备可能也可能不显示减号键。</p>
+    <p>numeric 数字输入键盘，所需要的就是 0 到 9 的数字，设备可能也可能不显示减号键。</p>
+    <p>tel 电话输入键盘，包含 0 到 9 的数字、星号（*）和井号（#）键。表单输入里面的电话输入通常应该使用</p>
+    <p>search 为搜索输入优化的虚拟键盘，比如，返回键可能被重新标记为“搜索”，也可能还有其他的优化。</p>
+    <p>email 为邮件地址输入优化的虚拟键盘，通常包含"@"符号和其他优化。表单里面的邮件地址输入应该使用</p>
+    <p>url 为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用</p>
+
+    <h1>is</h1>
+    <p>允许你指定标准 HTML 元素像定义的内置元素一样工作</p>
+
+    <h1>popover</h1>
+    <p>popover 用来指定一个元素为弹出式元素</p>
+    <p>弹出式元素通过 display: none 被隐藏，直到通过调用/控制元素（即带有 popovertarget(值为popover标签的id) 属性的 &lt;button&gt; 或 &lt;input
+        type="button"&gt;）或 HTMLElement.showPopover() (en-US) 调用打开。</p>
+    <p>当打开时，弹出式元素将出现在所有其他元素之上，即在顶层 (en-US)上，并且不会受到父元素的 position 或 overflow 样式的影响。</p>
+    <p>auto 具有 auto 状态的弹窗可以通过在弹窗之外的区域进行选择，以达到“轻触关闭”的目的，并且通常一次仅允许屏幕上显示一个弹窗</p>
+    <p>manual manual 弹窗必须始终明确隐藏，但可以用于菜单中嵌套弹窗等使用情况。</p>
+    <button popovertarget="auto">auto</button>
+    <button popovertarget="manual">manual</button>
+    <span id="auto" popover="auto">auto</span>
+    <span id="manual" popover="manual">manual</span>
+
+    <h1>translate</h1>
+    <p> translate 是一种枚举属性，用来规定对应元素的可翻译属性值及其 Text 子节点内容是否跟随系统语言作出对应的翻译变化。</p>
+    <p>空字符串或 yes，意味着网页在进行本地化的时候，对应内容要被翻译。</p>
+    <p>no，意味着对应的内容无需做任何翻译。</p>
+</body>
+<script>
+    function accesskeyButtonTest() {
+        alert('alt + p 触发按钮')
+    }
+</script>
+
+</html>

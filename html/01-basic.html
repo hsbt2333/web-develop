@@ -1,12 +1,552 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="author" content="菡云芝" />
-        <title>Hello</title>
-        <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
-    </head>
-    <body>
-        <h1>基本</h1>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="菡云芝" />
+    <title></title>
+    <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../index.css" />
+    <style>
+        html,
+        body {
+            width: 90%;
+            height: 100%;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>基础</h1>
+
+    <h2>&lt;!DOCTYPE&gt;</h2>
+    <p>&lt;!DOCTYPE&gt; 声明必须是 HTML 文档的第一行，位于 &lt;html&gt; 标签之前。 声明文档类型,
+        早期的 HTML(大约 1991-1992 年)文档类型声明类似于链接，规定了 HTML 页面必须遵从的良好规则，能自动检测错误和其他有用的东西</p>
+
+    <p style="font-size: 14px;">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</p>
+
+    <h2>注释</h2>
+    <p>&lt;!-- --&gt;</p>
+
+    <h2>&lt;html&gt;</h2>
+    <p>这个元素包裹了页面中所有的内容，有时被称为根元素</p>
+    <p>manifest 弃用 指定一个资源清单的 URI, 指示应在本地缓存的资源。 </p>
+    <p>version 指定控制当前文档的 HTML 版本文档类型定义。这个属性已不再需要，因为这在文档类型声明中是多余的版本信息。 </p>
+    <p>xmlns 指派文档的 XML 命名空间 </p>
+
+    <h2>&lt;head&gt;</h2>
+    <p>这个元素是一个容器，它包含了所有你想包含在 HTML 页面中但不在 HTML 页面中显示的内容。这些内容包括你想在搜索结果中出现的关键字和页面描述、CSS 样式、字符集声明等等。</p>
+    <p>profile 由空白字符分隔的一个或多个元数据配置文件的 URI。已弃用</p>
+
+    <h2>&lt;meta&gt;</h2>
+    <p>这个元素代表了不能由其他 HTML 元相关元素表示的元数据，比如 base link script style 或 title。</p>
+    <p>name性 提供的是文档级别的元数据，应用于整个页面。</p>
+    <p>charset 声明了文档的字符编码</p>
+    <p>content 此属性包含 http-equiv 或 name 属性的值，具体取决于所使用的值</p>
+    <p>http-equiv 属性定义了一个编译指示指令</p>
+
+    <h2>&lt;base&gt;</h2>
+    <p>指定用于一个文档中包含的所有相对 URL 的根 URL。一份中只能有一个 base 元素。可以通过使用 document.baseURI (en-US) 的 JS 脚本查询。</p>
+    <p>如果文档不包含 base 元素, baseURI 默认为 document.location.href</p>
+    <p>如果指定了多个 base 元素，只会使用第一个 href 和 target 值，其余都会被忽略。它是一个空元素，不能有结束标签。</p>
+    <p>如果指定了以下任一属性，这个元素必须在其他任何属性是 URL 的元素之前。</p>
+    <p>href 用于文档中相对 URL 地址的基础 URL。允许绝对和相对 URL。</p>
+    <p>target: </p>
+    <p>_self 默认值 载入结果到当前上下文 </p>
+    <p>_blank 载入结果到一个新的未命名的浏览上下文 </p>
+    <p>_parent 载入结果到父级浏览上下文(如果当前页是内联框)。如果没有父级结构,该选项的行为和_self一样。 </p>
+    <p>_top 载入结果到顶级浏览上下文（该浏览上下文是当前上下文的最顶级上下文）。如果没有父级,该选项的行为和_self 一样</p>
+
+    <h2>&lt;link&gt;</h2>
+    <p>外部资源链接元素 规定了当前文档与某个外部资源的关系。该元素最常用于链接样式表，此外也可以被用来创建站点图标</p>
+
+    <h2>&lt;title&gt;</h2>
+    这设置了页面的标题，也就是出现在该页面加载的浏览器标签中的内容。当页面被加入书签时，页面标题也被用来描述该页面。只拥有全局属性
+
+    <h2>&lt;style&gt;</h2>
+    <p>必须包含在文档的 &lt;head&gt; 内。一般来说，最好将样式放在外部样式表中，然后使用 &lt;link&gt; 元素应用它们。</p>
+
+    <p>如果在文档中包含多个 &lt;style&gt; 和 &lt;link&gt; 元素，它们将按照在文档中包含的顺序应用到 DOM，请确保按照正确的顺序包含它们，以避免出现意想不到的层叠问题。</p>
+
+    <h2>&lt;script&gt;</h2>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>属性</th>
+            <th>含义</th>
+            <th>取值</th>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>该属性表示所代表的脚本类型</td>
+            <td>
+                <ul>
+                    <li>属性未设置（默认），一个空字符串，或一个 JavaScript MIME 类型 代表脚本为包含 JavaScript 代码的“传统的脚本”。如果脚本指的是 JavaScript
+                        代码，我们鼓励作者省略这个属性，而不是指定一个 MIME 类型。所有的 JavaScript MIME 类型都列在 IANA 的媒体类型规范中。</li>
+                    <li>module, 此值导致代码被视为 JavaScript 模块。其中的代码内容会延后处理。charset 和 defer 属性不会生效。与传统代码不同的是，模块代码需要使用 CORS
+                        协议来跨源获取。</li>
+                    <li>importmap, 此值代表元素体内包含导入映射（importmap）表。导入映射表是一个 JSON 对象，开发者可以用它来控制浏览器在导入 JavaScript 模块时如何解析模块标识符。
+                    </li>
+                    <li>任何其他值, 所嵌入的内容被视为一个数据块，不会被浏览器处理。开发人员必须使用有效的 MIME 类型，但不是 JavaScript MIME 类型来表示数据块。所有其他属性，包括 src
+                        均会被忽略。</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>src</td>
+            <td>这个属性定义引用外部脚本的 URI，这可以用来代替直接在文档中嵌入脚本。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>async</td>
+            <td>
+                <ul>
+                    <li>对于普通脚本，如果存在 async 属性，那么普通脚本会被并行请求，并尽快解析和执行 </li>
+                    <li>对于模块脚本，如果存在 async 属性，那么脚本及其所有依赖都会在延缓队列中执行，因此它们会被并行请求，并尽快解析和执行。</li>
+                    <li>该属性能够消除解析阻塞的 Javascript。解析阻塞的 Javascript 会导致浏览器必须加载并且执行脚本，之后才能继续解析。</li>
+                </ul>
+            </td>
+            <td>这是个布尔属性：布尔属性的存在意味着 true 值，布尔属性的缺失意味着 false 值。</td>
+        </tr>
+        <tr>
+            <td>crossorigin</td>
+            <td>正常的 script 元素将最小的信息传递给 window.onerror，用于那些没有通过标准 CORS 检查的脚本。要允许对静态媒体使用独立域名的网站进行错误记录，请使用此属性。</td>
+            <td>
+                <ul>
+                    <li>anonymous 请求使用了 CORS 标头，且证书标志被设置为 'same-origin'。没有通过 cookies、客户端 SSL 证书或 HTTP
+                        认证交换用户凭据，除非目的地是同一来源。</li>
+                    <li>use-credentials 请求使用了 CORS 标头，且证书标志被设置为 'include'。总是包含用户凭据。</li>
+                    <li>"" 将属性名称设置为空值，如 crossorigin 或 crossorigin=""，与设置为 anonymous 的效果一样。</li>
+                    <li>不合法的关键字或空字符串会视为 anonymous 关键字。</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>defer</td>
+            <td>这个布尔属性的设置是为了向浏览器表明，该脚本是要在文档被解析后，但在触发 DOMContentLoaded 事件之前执行的。包含 defer 属性的脚本将阻塞 DOMContentLoaded
+                事件触发，直到脚本完成加载并执行。本属性不应在缺少 src 属性的情况下使用</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>fetchpriority</td>
+            <td>提供一个指示，说明在获取外部脚本时要使用的相对优先级</td>
+            <td>high low auto(默认值)</td>
+        </tr>
+        <tr>
+            <td>integrity</td>
+            <td>包含用户代理可用于验证所获取到资源的完整性的内联元数据</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>nomodule</td>
+            <td>这个布尔属性被设置来标明这个脚本不应该在支持 ES 模块的浏览器中执行。实际上，这可用于在不支持模块化 JavaScript 的旧浏览器中提供回退脚本。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>nonce</td>
+            <td>在 script-src Content-Security-Policy (en-US) 中允许脚本的一个一次性加密随机数（nonce）。服务器每次传输策略时都必须生成一个唯一的 nonce
+                值。提供一个无法猜测的 nonce 是至关重要的，因为绕过一个资源的策略是微不足道的。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>referrerpolicy</td>
+            <td>表示在获取脚本或脚本获取资源时，要发送哪个 referrer</td>
+            <td>
+                <ul>
+                    <li>no-referrer：不会发送 Referer 标头。</li>
+                    <li>no-referrer-when-downgrade（默认）：如果没有 TLS（HTTPS）协议，Referer 标头将不会被发送到源上。</li>
+                    <li>origin：发送的 referrer 将被限制在 referrer 页面的源：其协议、主机和端口。</li>
+                    <li>origin-when-cross-origin：将会限制发送至其他源的 referrer 的协议、主机和端口号。在同源的导航上仍然包括路径。</li>
+                    <li>same-origin：在同源内将发送 referrer，但是跨源请求不包含 referrer 信息。</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>blocking</td>
+            <td>这个属性明确指出，在获取脚本的过程中，某些操作应该被阻断 要阻断的操作必须是一个以空格分隔的列表</td>
+            <td>render 屏幕上渲染内容的操作应该被阻断。</td>
+        </tr>
+    </table>
+
+    <h2>&lt;body&gt;</h2>
+    包含了你访问页面时所有显示在页面上的内容，包含文本、图片、视频、游戏、可播放音频轨道等等。
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>属性</th>
+            <th>含义</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>alink 已弃用</td>
+            <td>超链接选中之后的文本颜色。此方法不符合规范，请使用 CSS 的 color 属性和 :active 伪类替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>background 已弃用</td>
+            <td>将 URI 所指向的图片作为背景。此方法不符合规范，请使用 CSS 的 background 属性替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>bgcolor 已弃用</td>
+            <td>文档的背景颜色。此方法不符合规范，请使用 CSS 的 background-color 属性替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>topmargin 已弃用</td>
+            <td>body 的上外边距。此方法不符合规范，请使用 CSS 的 margin-top 属性替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>rightmargin 已弃用</td>
+            <td>body 的右外边距。此方法不符合规范，请使用 CSS 的 margin-right 属性替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>bottommargin 已弃用</td>
+            <td>body 的底外边距。此方法不符合规范，请使用 CSS 的 margin-bottom 属性替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>leftmargin 已弃用</td>
+            <td>body 的左外边距。此方法不符合规范，请使用 CSS 的 margin-left 属性替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>link 已弃用</td>
+            <td>未访问过的超链接文本颜色。此方法不符合规范，请使用 CSS 的 color 属性和 :link 伪类替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>text 已弃用</td>
+            <td>文本颜色。此方法不符合规范，请使用 CSS 的 color 属性替代。</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>vlink 已弃用</td>
+            <td>访问过的超链接的文本颜色。此方法不符合规范，请使用 CSS color 属性和 :visited 伪类替代。</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>事件</th>
+            <th>含义</th>
+        </tr>
+        <tr>
+            <td>onafterprint</td>
+            <td>用户完成文档打印之后调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onbeforeprint</td>
+            <td>用户要求打印文档之前调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onbeforeunload</td>
+            <td>文档即将被关闭之前调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onblur</td>
+            <td>文档失去焦点时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onerror</td>
+            <td>文档加载失败时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onfocus</td>
+            <td>文档获得焦点时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onhashchange</td>
+            <td>文档当前地址的片段标识部分（以 ('#') 开始的部分）发生改变时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onlanguagechange 实验性</td>
+            <td>用户选择的语言发生改变时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onload</td>
+            <td>文档完成加载时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onmessage</td>
+            <td>文档接收到消息时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onoffline</td>
+            <td>网络连接失败时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>ononline</td>
+            <td>网络连接恢复时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onpopstate</td>
+            <td>用户回退历史记录时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onredo</td>
+            <td>用户重做操作时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onresize</td>
+            <td>文档尺寸发生改变时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onstorage</td>
+            <td>存储内容（localStorage / sessionStorage）发生改变时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onundo</td>
+            <td>用户撤销操作时调用的函数。</td>
+        </tr>
+        <tr>
+            <td>onunload</td>
+            <td>文档关闭时调用的函数。</td>
+        </tr>
+    </table>
+
+    <h2>&lt;br&gt;</h2>
+    <p>这是一个空元素.在文本中生成一个换行（回车）符号。此元素在写诗和地址时很有用，这些地方的换行都非常重要。</p>
+    <p>clear 已弃用 指定换行后下一行文本开始位置。</p>
+    <p>不要用 &lt;br&gt; 来增加文本之间的行间隔；应使用 CSS margin 属性或
+    <p> 元素。</p>
+
+    <h2>&lt;dir&gt;</h2>
+    <p>已弃用: 不再推荐使用该特性。虽然一些浏览器仍然支持它，但也许已从相关的 web 标准中移除，也许正准备移除或出于兼容性而保留</p>
+    <p>用于作为包含文件或文件夹目录的容器，可能由用户代理应用样式和图标。不应使用此过时元素；相反，对于包括文件列表在内的列表应使用 &lt;ul&gt; 元素。</p>
+
+    <h2>&lt;h1&gt;~&lt;h6&gt;</h2>
+    <p>标题 (Heading) 元素呈现了六个不同的级别的标题，&lt;h1&gt; 级别最高，而 &lt;h6&gt; 级别最低。</p>
+    <p>用户代理可以使用标题信息，例如自动构建文档的目录。</p>
+    <p>不要为了减小标题的字体而使用低级别的标题，而是使用 CSS font-size 属性。</p>
+    <p>避免跳过某级标题：始终要从 &lt;h1&gt; 开始，接下来依次使用 &lt;h1&gt; 等等。</p>
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题</h6>
+
+    <h2>&lt;hr&gt;</h2>
+    <p>表示段落级元素之间的主题转换（例如，一个故事中的场景的改变，或一个章节的主题的改变）。</p>
+    <p>在 HTML 的早期版本中，它是一个水平线。现在它仍能在可视化浏览器中表现为水平线，但它目前被定义为是语义上而非表现层面上的术语。所以如果想画一条水平线，请使用适当的 CSS 样式来实现。</p>
+
+    <h2>&lt;p&gt; 段落元素</h2>
+    <p>表示文本的一个段落。在视觉媒体中，段落通常表现为用空行和/或首行缩进与相邻段落分隔的文本块，但 HTML 段落可以是相关内容的任何结构分组，如图像或表格字段。</p>
+    <p>段落是块级元素，如果在关闭的 &lt;/p&gt; 标签之前解析了另一个块级元素，则该标签将自动关闭。</p>
+
+    <h1>图片</h1>
+    <h2>&lt;img&gt;</h2>
+    <p>将一张图像嵌入文档。</p>
+    <p>src 属性是必须的，它包含了你想嵌入的图片的路径。</p>
+    <p>alt 属性包含一条对图像的文本描述，这不是强制性的</p>
+
+    <h2>&lt;map&gt;</h2>
+    <p>与 &lt;area&gt; 元素一起使用来定义一个图像映射（一个可点击的链接区域）。</p>
+    <h2>&lt;area&gt;</h2>
+    <p>在图片上定义一个热点区域，可以关联一个超链接。&lt;area&gt;元素仅在&lt;map&gt;元素内部使用。</p>
+    <h2>&lt;figure&gt;</h2>
+    <p>代表一段独立的内容，可能包含 &lt;figcaption&gt; 元素定义的说明元素。该插图、标题和其中的内容通常作为一个独立的引用单元。</p>
+    <h2>&lt;figcaption&gt;</h2>
+    <p>是与其相关联的图片的说明/标题，用？于描述其父节点 &lt;figure&gt; 元素里的其他数据。这意味着 &lt;figcaption&gt; 在&lt;figure&gt; 块里是第一个或最后一个。同时 HTML
+        Figcaption 元素是可选的；如果没有该元素，这个父节点的图片只是会没有说明/标题。</p>
+    <h2>&lt;picture&gt;</h2>
+    <p>通过包含零或多个 &lt;source&gt; 元素和一个 &lt;img&gt; 元素来为不同的显示/设备场景提供图像版本。浏览器会选择最匹配的子 &lt;source&gt; 元素，如果没有匹配的，就选择
+        &lt;img&gt; 元素的 src 属性中的 URL。然后，所选图像呈现在&lt;img&gt;元素占据的空间中。</p>
+
+    <h1>链接</h1>
+    <h2>&lt;a&gt;</h2>
+    <p>可以通过它的 href 属性创建通向其他网页、文件、电子邮件地址、同一页面内的位置或任何其他 URL 的超链接。</p>
+    <table>
+        <tr>
+            <th>属性</th>
+            <th>含义</th>
+        </tr>
+        <tr>
+            <td>download</td>
+            <td>导致浏览器将链接的 URL 视为下载资源。可以使用或不使用 filename 值：决定文件名的值。/ 和 \ 被转化为下划线（_）。文件系统可能会阻止文件名中其他的字符，因此浏览器会在必要时适当调整文件名。
+            </td>
+        </tr>
+        <tr>
+            <td>href</td>
+            <td>超链接所指向的 URL</td>
+        </tr>
+        <tr>
+            <td>hreflang</td>
+            <td>该属性用于指定所链接到的文档的人类语言。其仅提供建议，并没有内置的功能。</td>
+        </tr>
+        <tr>
+            <td>ping</td>
+            <td>包含一个以空格分隔的 URL 列表，当跟随超链接时，浏览器会发送带有正文 PING 的 POST 请求。通常用于跟踪。</td>
+        </tr>
+        <tr>
+            <td>referrerpolicy</td>
+            <td>在跟随链接时，referrer 需要发送多少内容：</td>
+        </tr>
+        <tr>
+            <td>rel</td>
+            <td>该属性指定了目标对象到链接对象的关系。</td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>
+
+                <ul>
+                    <li>该属性指定在何处显示链接的 URL，作为浏览上下文的名称 </li>
+                    <li>_self：当前页面加载。（默认）</li>
+                    <li>_blank：通常在新标签页打开，但用户可以通过配置选择在新窗口打开。</li>
+                    <li>_parent：当前浏览环境的父级浏览上下文。如果没有父级框架，行为与 _self 相同。</li>
+                    <li>_top：最顶级的浏览上下文（当前浏览上下文中最“高”的祖先）。如果没有祖先，行为与 _self 相同。</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>该属性指定在一个 MIME 类型链接目标的形式的媒体类型。没有内置的功能。</td>
+        </tr>
+    </table>
+
+    <h1>列表</h1>
+    <h2>&lt;dl&gt;</h2>
+    <p>是一个包含术语定义以及描述的列表，通常用于展示词汇表或者元数据 (键 - 值对列表)。</p>
+    <h2>&lt;dt&gt;</h2>
+    <p>用于在一个定义列表中声明一个术语。该元素仅能作为 &lt;dl&gt; 的子元素出现。通常在该元素后面会跟着 &lt;dd&gt; 元素，然而，多个连续出现的 &lt;dt&gt; 元素都将由出现在它们后面的第一个
+        &lt;dd&gt; 元素定义。</p>
+    <h2>&lt;dd&gt;</h2>
+    <p>
+        用来指明一个描述列表 (&lt;dl&gt;) 元素中一个术语的描述。这个元素只能作为描述列表元素的子元素出现，并且必须跟着一个 &lt;dt&gt; 元素。
+    </p>
+    <dl>
+        <dt>声明1</dt>
+        <dd>描述2</dd>
+
+        <dt>声明2</dt>
+        <dt>声明3</dt>
+        <dd>描述23</dd>
+    </dl>
+
+    <h2>&lt;ol&gt;</h2>
+    <p>表示有序列表，通常渲染为一个带编号的列表。</p>
+    <table>
+        <tr>
+            <th>属性</th>
+            <th>含义</th>
+        </tr>
+        <tr>
+            <td>reversed</td>
+            <td>此布尔值属性指定列表中的条目是否是倒序排列的，即编号是否应从高到低反向标注。</td>
+        </tr>
+        <tr>
+            <td>start</td>
+            <td>一个整数值属性，指定了列表编号的起始值。此属性的值应为阿拉伯数字，尽管列表条目的编号类型 type 属性可能指定为了罗马数字编号等其他类型的编号。比如说，想要让元素的编号从英文字母 "d" 或者罗马数字
+                "iv" 开始，都应当使用 start="4"。</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>
+                <p>设置编号的类型</p>
+                <ul>
+                    <li>a 表示小写英文字母编号</li>
+                    <li>A 表示大写英文字母编号</li>
+                    <li>i 表示小写罗马数字编号</li>
+                    <li>I 表示大写罗马数字编号</li>
+                    <li>1 表示数字编号（默认）编号类型适用于整个列表，除非在 &lt;ol&gt; 元素的 &lt;li&gt; 元素中使用不同的 type 属性。</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <p>&lt;ol&gt; 和 &lt;ul&gt; 元素两者可以无限嵌套，既可以同类嵌套，也可以互相嵌套。</p>
+    <ol>
+        <li>Fee</li>
+        <li>Fi</li>
+        <li>Fo</li>
+        <li>Fum</li>
+    </ol>
+    <h2>&lt;ul&gt;</h2>
+    <p>表示无序的项目列表，通常渲染为项目符号列表。</p>
+    <p>compact 已弃用 此布尔属性提示列表是否需要被渲染为更紧凑的样式。用户代理决定如何解释这个属性，且并非所有浏览器都支持它。CSS 属性 line-height 的值设为 80% 即可。</p>
+    <p>type 已弃用 用于设置列表的着重号样式 请使用 CSS list-style-type 属性作为代替。</p>
+
+    <h2>&lt;li&gt;</h2>
+    <p>用于表示列表里的条目</p>
+    <p>它必须包含在一个父元素里：一个有序列表（&lt;ol&gt;）、一个无序列表（&lt;ul&gt;），或者一个菜单（&lt;menu&gt;）</p>
+    <p>value 这个整数型属性表明了本 &lt;li&gt; 元素在有序列表（由 &lt;ol&gt; 元素定义）中的序号。本属性值只能用数字，即使列表使用罗马数字或字母来展示。随后的列表条目会从设置的值开始计数。value
+        属性对于无序列表 (&lt;ul&gt;) 或者菜单 (&lt;menu&gt;) 无效。</p>
+    <p>type 已弃用 </p>
+
+    <h1>多媒体</h1>
+    <h2>&lt;audio&gt;</h2>
+    <p>用于在文档中嵌入音频内容</p>
+    <p>可以包含一个或多个音频资源，这些音频资源可以使用 src 属性或者 &lt;source&gt; 元素来进行描述：浏览器将会选择最合适的一个来使用。也可以使用 MediaStream 将这个元素用于流式媒体。</p>
+    <p>src 嵌入的音频的 URL</p>
+    <p>autoplay 布尔值属性；声明该属性，音频会尽快自动播放，不会等待整个音频文件下载完成。自动播放音频（或有声视频）可能会破坏用户体验，所以应该尽可能避免。如果你一定要提供自动播放功能，你应该加入开关</p>
+    <p>loop 布尔属性；如果声明该属性，将循环播放音频。</p>
+    <p>controls 如果声明了该属性，浏览器将提供一个包含声音，播放进度，播放暂停的控制面板，让用户可以控制音频的播放。</p>
+
+    <h2>&lt;source&gt; 媒体或图像资源元素</h2>
+    <p>为 &lt;picture&gt;、&lt;audio&gt; 和 &lt;video&gt;
+        元素指定一个或多个媒体资源。它是一个空元素，这意味着它没有内容，也不需要关闭标签。鉴于浏览器对图像文件格式和媒体文件格式的支持不同，该元素通常用于以多种文件格式提供相同的媒体内容，以便与多种浏览器兼容。</p>
+    <p>type 指定图像的 MIME 媒体类型或其他媒体类型，可选择包含 codecs 参数 (en-US)。</p>
+    <p>src 指定媒体资源的 URL。如果 &lt;source&gt; 的父节点是 &lt;audio&gt; 或 &lt;video&gt; ，则必须指定该属性。如果父元素是 &lt;picture&gt; 则不允许指定该属性。
+    </p>
+    <p>srcset 指定由逗号分隔的一个或多个图片 URL 及其描述符的列表。如果 source 的父节点是 picture，则必须指定该属性。如果父节点为 audio 或 video
+        则不允许指定该属性。列表由逗号分隔的字符串组成，表示浏览器可能使用的一组图像。每个字符串由以下内容组成 指定图像位置的 URL 宽度描述符——直接以 "w" 结尾的正整数 像素密度描述符——直接以 "x" 结尾的正浮点数
+    </p>
+    <p>sizes 指定描述图片最终呈现宽度的源尺寸列表 picture 才允许指定</p>
+    <p>height 以像素为单位指定图片的固有高度</p>
+    <p>width 以像素为单位指定图片的固有宽度</p>
+
+    <h2>&lt;track&gt;</h2>
+    <p>被当作媒体元素 audio 和 video 的子元素来使用。它允许指定时序文本字幕（或者基于时间的数据）例如自动处理字幕</p>
+    <p>default 该属性定义了该 track 应该启用，除非用户首选项指定了更合适一个 track。每个媒体元素里面只有一个 track 元素可以有这个属性。</p>
+    <p>src track 的地址。必须是合法的 URL。该属性必须定义。</p>
+    <p>label 当列出可用的 text tracks 时，给浏览器使用的 text track 的标题，这种标题是用户可读的</p>
+
+    <h2>&lt;video&gt;</h2>
+    <p>用于在文档中嵌入媒体播放器，用于支持文档内的视频播放。</p>
+    <p>src 要嵌到页面的视频的 URL。可选；你也可以使用 video 块内的 source 元素来指定需要嵌到页面的视频。</p>
+    <p>autoplay 一个布尔属性；声明该属性后，视频会尽快自动开始播放，不会停下来等待数据全部加载完成。无法使用 autoplay="false" 来关闭视频的自动播放功能；只要 video
+        标签中有这个属性，视频就会自动播放。要移除自动播放，需要完全删除该属性。</p>
+    <p>controls 如果存在该属性，浏览器会在视频底部提供一个控制面板，允许用户控制视频的播放，包括音量、拖动进度、暂停或恢复播放。</p>
+    <p>controlslist 当浏览器显示视频底部的播放控制面板（例如，指定了 controls 属性）时，controlslist 属性会帮助浏览器选择在控制面板上显示哪些 video 元素控件。允许的值有
+        nodownload、nofullscreen 和 noremoteplayback。如果要禁用画中画模式（和控件），请使用 disablepictureinpicture 属性。</p>
+    <p>disablepictureinpicture 防止浏览器显示画中画上下文菜单或在某些情况下自动请求画中画模式。</p>
+    <p>disableremoteplayback 一个布尔属性，用于在使用有线（HDMI、DVI 等）和无线技术（Miracast、Chromecast、DLNA、AirPlay 等）连接设备时，禁用远程播放功能。</p>
+    <p>loop 一个布尔属性；指定后会在视频播放结束的时候，自动返回视频开始的地方，继续播放。</p>
+    <p>height 视频显示区域的高度，单位是 CSS 像素（仅限绝对值；不支持百分比）。</p>
+    <p>width 视频显示区域的宽度，单位是 CSS 像素（仅限绝对值；不支持百分比）。</p>
+    <p>muted 一个布尔属性，指明在视频中音频的默认设置。设置后，音频会初始化为静音。默认值是 false, 意味着视频播放的时候音频也会播放。</p>
+    <p>playsinline 一个布尔属性，指明视频将内嵌（inline）播放，即在元素的播放区域内。请注意，没有此属性并不意味着视频始终是全屏播放的。</p>
+    <p>poster 海报帧图片 URL，用于在视频处于下载中的状态时显示。如果未指定该属性，则在视频第一帧可用之前不会显示任何内容，然后将视频的第一帧会作为海报（poster）帧来显示。</p>
+    <p>preload 该枚举属性旨在提示浏览器，作者认为在播放视频之前，加载哪些内容会达到最佳的用户体验 none: 表示不应该预加载视频。 metadata: 表示仅预先获取视频的元数据（例如长度）。 auto:
+        表示可以下载整个视频文件，即使用户不希望使用它。空字符串: 与 auto 值一致。</p>
+
+    <h1>绘画</h1>
+    <h2>&lt;svg&gt; 可缩放矢量图形</h2>
+    <p>基于 XML 标记语言，用于描述二维的矢量图形</p>
+    <p>作为一个基于文本的开放网络标准，SVG 能够优雅而简洁地渲染不同大小的图形，并和 CSS、DOM、JavaScript 和 SMIL 等其他网络标准无缝衔接。本质上，SVG 相对于图像，就好比 HTML 相对于文本</p>
+    <p>SVG 图像及其相关行为被定义于 XML 文本文件之中，这意味着可以对它们进行搜索、索引、编写脚本以及压缩。此外，这也意味着可以使用任何文本编辑器和绘图软件来创建和编辑它们。</p>
+    <p>和传统的点阵图像模式（如 JPEG 和 PNG）不同的是，SVG 格式提供的是矢量图，这意味着它的图像能够被无限放大而不失真或降低质量，并且可以方便地修改内容，无需图形编辑器。通过使用合适的库进行配合，SVG
+        文件甚至可以随时进行本地化。</p>
+    <p>https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial</p>
+
+    <h2>&lt;canvas&gt; 画布</h2>
+    <p>标签需要闭合,可被用来通过 JavaScript（Canvas API 或 WebGL API）绘制图形及图形动画。</p>
+    <p>height 视频显示区域的高度，单位是 CSS 像素（仅限绝对值；不支持百分比）。</p>
+    <p>width 视频显示区域的宽度，单位是 CSS 像素（仅限绝对值；不支持百分比）。</p>
+    <p>moz-opaque 非标准 已弃用 通过设置这个属性，来控制 canvas 元素是否半透明。如果你不想 canvas 元素被设置为半透明，使用这个元素将可以优化浏览器绘图性能。</p>
+
+    <h1>时间</h1>
+    <h2>&lt;time&gt;</h2>
+    <p>用来表示一个特定的时间段。该元素可包含 datetime 属性，用于将日期转换为机器可读格式，从而获得更好的搜索引擎结果或自定义功能（如提醒）。</p>
+    <p>这个标签对于搜索引擎和其他程序来说非常有用，因为它们可以通过这个标签更好地理解网页上的时间信息，从而提供更准确的搜索结果和更语义化的网页结构。</p>
+    <p>datetime 该属性表示此元素的时间和/或日期，并且属性值必须符合下文所描述的格式</p>
+    <time datetime="2024-04-25 13:53">2024-04-25 13:53</time>
+</body>
+
 </html>
